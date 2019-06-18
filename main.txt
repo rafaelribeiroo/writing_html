@@ -1,0 +1,9 @@
+Importante: Sempre que for iniciar um novo projeto, ao invés de sair redigindo
+as marcações, crie um documento vazio e insira todo o texto e elementos que a
+sua página vai conter. Depois, delimitamos.
+
+h1 > Nível de título 1
+h2 > Nível de título 2
+...
+
+Marcas são aquilo que ficam entre < e >
