@@ -1,0 +1,19 @@
+O que são os termos UI & UX?
+
+    UI (Interface do Usuário): Tudo aquilo que é perceptível em um site,
+    programa de computador ou até mesmo um produto físico.
+
+    UX (Experiência do Usuário): Toda a experiência que o usuário terá
+    desde o momento em que ele se interessou pelo produto ao ver algum
+    anúncio até o momento que o produto foi entregue.
+
+Difference between SVG & Canvas
+
+    SVG: Formato para vetor, possui toda uma estrutura de: pontos/linhas/curvas
+    (típicos de um vetor)
+
+    Canvas: Mais flexível, dá pra criar formas básicas como se teria em um SVG
+    mas também dá pra trabalhar em pixel/manipular fotografias/tocar vídeo.
+    Pode-se manipular através do JS, no SVG manipula o próprio código fonte
+    dele.
+
