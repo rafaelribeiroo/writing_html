@@ -1,0 +1,49 @@
+@charset "UTF-8";
+
+form {
+	width: 900px;
+	margin: auto;
+}
+
+input, textarea {
+	font-family: sans-serif;
+	font-weight: normal;
+	font-size: 13pt;
+	background-color: rgba(255,255,255,.8); /* Se a imagem estivesse por trás do textbox ela iria ficar cortada, mas com essa tag ela vai ficar transparente, dando visibilidade */ 
+}
+
+input:hover, textarea:hover {
+	background-color: #dddddd;
+}
+
+legend {
+	color: #888888;
+	font-weight: bold;
+	font-size: 13pt;
+	font-family: sans-serif;
+}
+
+fieldset {
+	border-color: #cecece;
+	margin: 20px;
+}
+
+fieldset#sexo {
+	width: 150px;
+}
+
+fieldset#usuario {
+	background: url("../_imagens/form/icone-contato.png") no-repeat 95% 95%; /* lateral e vertical */
+}
+
+fieldset#endereco {
+	background: url("../_imagens/form/icone-endereco.png") no-repeat 95% 95%; /* lateral e vertical */
+}
+
+fieldset#mensagem {
+	background: url("../_imagens/form/icone-mensagem.png") no-repeat 95% 95%; /* lateral e vertical */
+}
+
+fieldset#pedido {
+	background: url("../_imagens/form/icone-pagamento.png") no-repeat 95% 95%; /* lateral e vertical */
+}
