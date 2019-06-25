@@ -1,0 +1,310 @@
+/**
+ * Ícone para chamar o menu
+ */
+#nav-btn {
+	z-index: 9999;
+	position: fixed;
+	border: #FFD700 1px solid;
+	padding: 10px 20px;
+	cursor: pointer;
+	background-color: #333;
+	transition: all 0.4s linear;
+}
+
+/**
+ * Elemento filho, os riscos horizontais da nav
+ */
+#nav-btn > div {
+	width: 20px;
+	height: 3px;
+	background: #bababa;
+	margin: 4px 0px;
+	transition: all 0.4s linear;
+}
+
+/**
+ * Ao passar o mouse por cima do ícone
+ */
+#nav-btn:hover {
+	border: #008FB2 1px solid;
+}
+
+/**
+ * Ao passar o mouse no ícone os riscos ficarão da forma que quero
+ * @type {[type]}
+ */
+#nav-btn:hover div {
+	background: #bababa;
+}
+
+#nav-slide {
+	z-index: 9999;
+	position: fixed;
+	left: -400px;
+	top: 60px;
+	width: 300px;
+	height: 300px;
+	background: #333;
+	transition: left 0.4s linear;
+	overflow-y: auto;
+	color: #FFF;
+	padding: 25px;
+}
+
+/* scroll different */
+section#nav-slide::-webkit-scrollbar-track { -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);	background-color: #FFF; }
+section#nav-slide::-webkit-scrollbar { width: 10px; background-color: #F3F3F3; }
+section#nav-slide::-webkit-scrollbar-thumb { background-color: #008fb2; border: 1px solid #000; }
+
+#nav-slide ul {
+  list-style: none;
+}
+
+/* List menu */
+/* ---------------
+Icons
+------------------ */
+.inter li {
+  display: inline-block;
+  margin-left: 5px;
+  margin-top: 25px;
+}
+
+.inter li a {
+  width: 30px;
+  height: 30px;
+  border-radius: 50px;
+  display: block;
+  float: left;
+  text-indent: -9999px;
+	-webkit-filter: grayscale(100%);
+	filter: grayscale(100%);
+}
+.inter li a:hover { -webkit-filter: blur(5px); -moz-filter: blur(5px); -o-filter: blur(5px); -ms-filter: blur(5px); filter: blur(5px);}
+.inter li a:focus { -webkit-filter: grayscale(0);	filter: none; }
+
+.icon-1 { background: url('../images/icons/brazil.png'); background-size: 100% 100%; }
+.icon-2 { background: url('../images/icons/united.png'); background-size: 100% 100%; }
+.icon-3 { background: url('../images/icons/spain.png');  background-size: 100% 100%; }
+
+/* --------------------------------
+
+Main Components
+
+-------------------------------- */
+.cd-accordion-menu {
+  width: 100%;
+  background: #CCC;
+  margin-top: 5%;
+  margin-bottom: 30%;
+}
+
+.cd-accordion-menu ul {
+  /* by default hide all sub menus */
+  display: none;
+  list-style: none;
+}
+
+.cd-accordion-menu li {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.cd-accordion-menu input[type=checkbox] {
+  /* hide native checkbox */
+  position: absolute;
+  opacity: 0;
+}
+
+.cd-accordion-menu label, .cd-accordion-menu a {
+  position: relative;
+  display: block;
+  background: #4d5158;
+  box-shadow: inset 0 -1px #555960;
+  color: #FFF;
+  font-size: 1.3rem;
+}
+
+.no-touch .cd-accordion-menu label:hover, .no-touch .cd-accordion-menu a:hover {
+  background: #52565d;
+}
+
+.cd-accordion-menu label::before, .cd-accordion-menu label::after, .cd-accordion-menu a::after {
+  /* icons */
+  content: '';
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+.cd-accordion-menu label {
+  cursor: pointer;
+}
+.cd-accordion-menu label.icons::before, .cd-accordion-menu label.icons::after {
+  background-image: url(../images/svg/cd-icons.svg);
+  background-repeat: no-repeat;
+}
+.cd-accordion-menu label::before {
+  /* arrow icon */
+  left: 18px;
+  background-position: 0 0;
+  -webkit-transform: translateY(-50%) rotate(-90deg);
+  -moz-transform: translateY(-50%) rotate(-90deg);
+  -ms-transform: translateY(-50%) rotate(-90deg);
+  -o-transform: translateY(-50%) rotate(-90deg);
+  transform: translateY(-50%) rotate(-90deg);
+}
+
+.cd-accordion-menu label::after {
+  /* folder icons */
+  left: 41px;
+  background-position: -16px 0;
+}
+.cd-accordion-menu a::after {
+  /* image icon */
+  left: 36px;
+  background: url(../images/svg/cd-icons.svg) no-repeat -48px 0;
+}
+.cd-accordion-menu input[type=checkbox]:checked + label::before {
+  /* rotate arrow */
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+.cd-accordion-menu input[type=checkbox]:checked + label::after {
+  /* show open folder icon if item is checked */
+  background-position: -32px 0;
+}
+
+.cd-accordion-menu input[type=checkbox]:checked + label + ul,
+.cd-accordion-menu input[type=checkbox]:checked + label:nth-of-type(n) + ul {
+  /* use label:nth-of-type(n) to fix a bug on safari (<= 8.0.8) with multiple adjacent-sibling selectors*/
+  /* show children when item is checked */
+  display: block;
+}
+
+.cd-accordion-menu ul label,
+.cd-accordion-menu ul a {
+  background: #35383d;
+  box-shadow: inset 0 -1px #41444a;
+  padding-left: 82px;
+}
+
+.no-touch .cd-accordion-menu ul label:hover, .no-touch
+.cd-accordion-menu ul a:hover {
+  background: #3c3f45;
+}
+
+.cd-accordion-menu > li:last-of-type > label,
+.cd-accordion-menu > li:last-of-type > a,
+.cd-accordion-menu > li > ul > li:last-of-type label,
+.cd-accordion-menu > li > ul > li:last-of-type a {
+  box-shadow: none;
+}
+
+.cd-accordion-menu > li > ul > li:last-of-type a {
+	color: #F39;
+}
+
+.cd-accordion-menu ul label::before {
+  left: 36px;
+}
+
+.cd-accordion-menu ul label::after,
+.cd-accordion-menu ul a::after {
+  left: 59px;
+}
+
+.cd-accordion-menu ul ul label,
+.cd-accordion-menu ul ul a {
+  padding-left: 100px;
+}
+
+.cd-accordion-menu ul ul label::before {
+  left: 54px;
+}
+
+.cd-accordion-menu ul ul label::after,
+.cd-accordion-menu ul ul a::after {
+  left: 77px;
+}
+
+.cd-accordion-menu ul ul ul label,
+.cd-accordion-menu ul ul ul a {
+  padding-left: 118px;
+}
+
+.cd-accordion-menu ul ul ul label::before {
+  left: 72px;
+}
+
+.cd-accordion-menu ul ul ul label::after,
+.cd-accordion-menu ul ul ul a::after {
+  left: 95px;
+}
+@media only screen and (min-width: 600px) {
+  .cd-accordion-menu label.icons, .cd-accordion-menu a {
+    padding: 15px 15px 15px 82px;
+    font-size: 1rem;
+  }
+  .cd-accordion-menu label, .cd-accordion-menu a {
+    padding: 15px 15px 15px 20px;
+    font-size: 1rem;
+  }
+  .cd-accordion-menu label::before {
+    left: 24px;
+  }
+  .cd-accordion-menu label::after {
+    left: 53px;
+  }
+  .cd-accordion-menu ul label,
+  .cd-accordion-menu ul a {
+    padding-left: 106px;
+  }
+  .cd-accordion-menu ul label::before {
+    left: 48px;
+  }
+  .cd-accordion-menu ul label::after,
+  .cd-accordion-menu ul a::after {
+    left: 77px;
+  }
+  .cd-accordion-menu ul ul label,
+  .cd-accordion-menu ul ul a {
+    padding-left: 130px;
+  }
+  .cd-accordion-menu ul ul label::before {
+    left: 72px;
+  }
+  .cd-accordion-menu ul ul label::after,
+  .cd-accordion-menu ul ul a::after {
+    left: 101px;
+  }
+  .cd-accordion-menu ul ul ul label,
+  .cd-accordion-menu ul ul ul a {
+    padding-left: 154px;
+  }
+  .cd-accordion-menu ul ul ul label::before {
+    left: 96px;
+  }
+  .cd-accordion-menu ul ul ul label::after,
+  .cd-accordion-menu ul ul ul a::after {
+    left: 125px;
+  }
+}
+.cd-accordion-menu.animated label::before {
+  /* this class is used if you're using jquery to animate the accordion */
+  -webkit-transition: -webkit-transform 0.3s;
+  -moz-transition: -moz-transform 0.3s;
+  transition: transform 0.3s;
+}

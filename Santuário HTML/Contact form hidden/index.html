@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>Contact form with VueJS</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css'>
+
+      <link rel="stylesheet" href="./style.css">
+
+  
+</head>
+
+<body>
+
+  <script type="text/x-template" id="tpl_contact_form">
+	<div class="contact-form" v-bind:class="{ 'contact-form-active': contactFormActive }">
+		<div class="contact-btn-container">
+			<button class="contact-btn" v-on:click="toggleContactForm">Contact Me</button>
+		</div>
+		<div class="contact-head">
+			<div class="contact-close-btn-container">
+				<button class="contact-close-btn" v-on:click="closeContactForm">&times;</button>
+			</div>
+		</div>
+		<div class="contact-body">
+			<div class="form-control">
+				<div class="floating-label-input">
+					<input type="text" id="fullname" placeholder="Full Name (Optional)" v-model="contactFullName">
+					<label for="fullname">Full Name (Optional)</label>
+				</div>
+			</div>
+			<div class="form-control">
+				<div class="floating-label-input">
+					<input type="email" id="email" placeholder="E-mail Address" v-model="contactEmail">
+					<label for="email">E-mail Address</label>
+				</div>
+			</div>
+			<div class="form-control">
+				<div class="floating-label-input">
+					<textarea rows="5" id="message" placeholder="Message for the developer" v-model="contactMessage"></textarea>
+					<label for="message">Message for the developer</label>
+				</div>
+			</div>
+			<div class="form-control text-right">
+				<button class="btn btn-default" v-on:click="closeContactForm">Close this form</button>
+				<button class="btn btn-primary" v-on:click="sendMyMessage">Send my message</button>
+			</div>
+		</div>
+	</div>
+</script>
+<!-- Usage of the component -->
+<div id="app">
+	<contact-form></contact-form>
+	<div class="filler-1">
+		<h1 class="filler-2">Example component for 'Contact Me'</h1>
+		<h2 class="filler-2">This is just an example</h2>
+	</div>
+</div>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.min.js'></script>
+
+  
+
+    <script  src="./script.js"></script>
+
+
+
+
+</body>
+
+</html>
