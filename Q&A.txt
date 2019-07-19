@@ -22,4 +22,3 @@ O que é o Hyperlink?
     Elemento de interface, quando você usa um software/sistema em qualquer
     dispositivo, existem códigos por trás da interface dando instruções
     sobre como interagir, ele usa o que chamamos de HTML.
-
